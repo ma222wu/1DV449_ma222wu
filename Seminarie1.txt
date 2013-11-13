@@ -1,0 +1,31 @@
+# Diskussionsfråga 1 - Webben & integritet
+*Vad ser du för faror för den personliga integriteten i ett mer och mer webbaserat samhälle? Vad har individen för ansvar för sin egen personliga integritet ur ett webbperspektiv?*
+
+De största farorna för den personliga integriteten på webben anser jag ha att göra med lösenordssäkerhet. 
+Det faktum att man ofta väljer samma lösenord för flera olika tjänster gör att en eventuell förbrytare bara behöver ett lösenord för att komma åt alla konton en viss användare har på alla de olika tjänster de deltar i.
+Är man till exempel kund hos Swedbank måste man för flera av deras tjänser ha en "personlig kod", som måste vara sex tecken lång och som ger tillgång till alla kundens världsliga tillgångar.
+Lyckas man därmed hacka någon annan tjänst och deras lösenord där är samma de har hos Swedbank blir resultatet katastrofalt för den drabbade.
+
+*I dag pratas det mycket inom forskningen om "Big Data"? Vad betyder det uttrycket?*
+Big data betecknar data i så stora mängder att den är svår att arbeta med.
+
+*Stora företag som t.ex. Google och Facebook samlar massor av information om våra aktiviteter på webben genom att vi använder deras tjänster. Vad ser du för problem med detta? Vad ser du för fördelar? Motivera dina svar?*
+Från individens perspektiv är det naturligtvis inte bra att blir kartlagd av stora multinationella företag. I Google och Facebooks fall är det inte användarna, utan *annonsörerna* som är kunden man i första hand vill tillfredsställa.
+Detta behöver naturligtvis inte vara en nackdel om annonsörerna råkar vilja göra reklam för en bra produkt som ökar användarens livskvalitet, men hur ofta det är fallet går att diskutera.
+
+*Vad fick du för tankar när du läste publikationen "Storebror på Facebook"?*
+Mycket av det som skrivs i texten är självklart; lägger man ut personlig information där alla så kan alla se den. Problemet som belyses är dock att Facebook och andra sociala medier inte talar om för användarna att de sparar och använder användarnas personliga information "emot" dem.
+Man skriver också om hur mycket information om användarna som "by default" är tillgänglig för vem som helst. Vad detta kan få för konsekvenser är ingenting som användarna oftast tänker på.
+
+## 1.2 Fallstudie
+*Hur skulle du, som student, se på att alla dina aktiviter på Coursepress sparas på ett mer omfattande sätt för oss som kursansvariga att analysera? Vilka problem och vilka fördelar finns? Vad är OK att spara? Vad är inte OK?*
+Om man utgår från att det enda syftet skulle vara att förbättra utbildningen tycker jag det inte finns nån gräns för hur mycket som får sparas. Det man bör betänka är om det finns information som kan användas av individuella användare av systemet för att skada varandra (såsom hemaddress, om man skulle spara något sånt.
+Det är viktigt att inte bara tänka på vad som får sparas, utan även på vem som har tillgång till vad.
+
+# Diskussionsfråga 2 - Webbskrapning
+*Vilka problem ser du med webbskrapning. Både som webbplatsägare (informationsägare) och som webbutvecklare. Nämn minst tre stycken, motivera dina val.*
+Att parsa och välja bort irrelevant information, att hålla skrapad information uppdaterad och att samtidigt se till att man inte skrapar så mycket information så ofta att man belastar källorna orimligt mycket.
+Dessa tre svårigheter ser jag som de största och de är i högsta grad kopplade till varandra. För att maximera kvaliteten måste informationen man skrapar naturligtvis vara up-to-date, komplett och över huvudtaget tillgänglig. Skrapar man för mycket information för ofta skadar det både den egna applikationen och eventuellt källan man skrapar.
+
+*När man som webbutvecklare skrapar en sida finns det vissa etikettsregler som man bör försöka följa. Kan du kommer på några sådana regler?*
+Den viktigaste etikettsreglen har att göra med hur mycket och hur ofta man skrapar data. Som nämnts tidigare är det viktigt att man inte skrapar för mycket eller för ofta, då det kan påverka informationsägarens applikation negativt.
