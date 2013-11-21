@@ -1,17 +1,21 @@
 <?php
 
-
-//curl_post("http://vhost3.lnu.se:20080/~1dv449/scrape/check.php");
-//curl_post("http://vhost3.lnu.se:20080/~1dv449/demo/login.php");
-//curl_post("http://giantbomb.com");
-
-//libxml_use_internal_errors(true);
 class Main
 {
 	public $m_producers;
 	
 	public function __construct()
 	{
+		echo '
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<title>
+				</title>
+				<meta charset="utf-8" />
+			</head>
+			<body>';
+		
 		$this->m_producers = array();
 		
 		$this->curl_post("http://vhost3.lnu.se:20080/~1dv449/scrape/check.php");
@@ -19,6 +23,8 @@ class Main
 		var_dump($this->m_producers);
 		
 		$this->SerializeProducer();
+		
+		echo '</body></html>';
 	}
 	
 	function curl_post($url)
@@ -43,39 +49,30 @@ class Main
 		
 		$data = curl_exec($curlHandler);
 		
-		
-		//var_dump($data);
-		//var_dump(curl_error($curlHandler));
-		//var_dump(curl_errno($curlHandler));
-		
 		$htmlLocation = curl_getinfo($curlHandler, CURLINFO_EFFECTIVE_URL);
 		
 		curl_close($curlHandler);
 		
-		//header('Location: '.$htmlLocation);
+		
+		
+		
 		
 		$get_data = $this->curl_get_main_page($htmlLocation);
 		
 		$dom = new DOMDocument();
 		
-		if($dom->LoadHTML($get_data))
+		$dom->LoadHTML('<?xml encoding="UTF-8">' . $get_data);
+		
+		$xpath= new DOMXPath($dom);
+		$items = $xpath->query('//tr//a');
+		
+		foreach($items as $item)
 		{
-			$xpath= new DOMXPath($dom);
-			$items = $xpath->query('//tr//a');
+			$producerUrl= $item->getAttribute("href");
 			
-			foreach($items as $item)
-			{
-				$producerUrl= $item->getAttribute("href");
-				
-				
-				$this->curl_get_producer_page($producerUrl);
-				//echo $item->nodeValue . "    " . $item->getAttribute("href") . "<br/>";
-			}
+			$this->curl_get_producer_page($producerUrl,$item->nodeValue);
 		}
-		else 
-		{
-			die("error when reading html");
-		}
+		
 	}
 
 	function curl_get_main_page($url)
@@ -89,19 +86,12 @@ class Main
 		
 		$data2 = curl_exec($ch);
 		
-		//var_dump($data2);
-		
-		var_dump(curl_error($ch));
-		var_dump(curl_errno($ch));
-		
 		curl_close($ch);
 		
 		return $data2;
 	}
 	
-	
-	
-	function curl_get_producer_page($url)
+	function curl_get_producer_page($url, $name)
 	{
 		$producer = new Producer();
 		$producerID = preg_replace("/[^0-9]/", "", $url);
@@ -122,34 +112,31 @@ class Main
 		
 		$dom = new DOMDocument();
 		
-		$dom->LoadHTML($data2);
+		$dom->LoadHTML('<?xml encoding="UTF-8">'.$data2);
 		
 		$xpath= new DOMXPath($dom);
 			$titles = $xpath->query('//h1');
 			
 			foreach($titles as $title)
 			{
-				//echo $title->nodeValue;
-				$producer->m_name = $title->nodeValue;
+				$producer->m_name = $name;
 			}
 			
 			$locations = $xpath->query('//span[@class="ort"]');
 			
 			foreach($locations as $location)
 			{
-				//echo $location->nodeValue;
 				$producer->m_location = $location->nodeValue;
+				$producer->m_location = preg_replace("/Ort: /", "", $location->nodeValue);
 			}
 			
 			$siteURLs = $xpath->query('//div[@class="hero-unit"]//a');
 			
 			foreach($siteURLs as $siteURL)
 			{
-				//echo $siteURL->nodeValue;
 				$producer->m_url = $siteURL->nodeValue;
 			}
 			
-			//echo $producerID;
 			array_push($this->m_producers, $producer);
 	}
 	
