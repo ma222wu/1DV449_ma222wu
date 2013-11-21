@@ -1,0 +1,24 @@
+# Fråga 1
+*Ni är fria att välja sätt att läsa in och extrahera data ur webbsidorna. Motivera ditt val!*
+
+Jag använder cURL och DomDocument, då det finns utförliga videor på kurssiten om hur dessa metoder används.
+
+# Fråga 2
+*Vad finns det för risker med applikationer som innefattar automatisk skrapning av webbsidor? Nämn minst tre stycken!*
+
+Informationen på siten kan förändras på ett sätt som gör att scriptet som skrapar inte fungerar längre. Skrapningen kan negativt påverka sidans prestanda. Skrapningen måste vara så pass subtil att parten som ansvarar för sidan inte upptäcker och sätter stopp för skrapningen om denne skulle vilja göra det. 
+
+# Fråga 3
+*Tänk dig att du skulle skrapa en sida gjord i ASP.NET WebForms. Vad för extra problem skulle man kunna få då?*
+
+Jag har inte tillräckligt med kunskap om ASP.NET WebForms för att svara definitivt, men på grund av hur ASP hanterar states ska det tydligen vara problematiskt att skrapa sidor som till exempel kräver autentisering.
+
+# Fråga 4
+*Har du gjort något med din kod för att vara "en god webbskrapare" med avseende på hur du skrapar sidan?*
+
+Mitt fokus har helt legat på att uppfylla den funktionalitet som krävs för ett godkänt resultat. jag har inte tänkt på god etikett gentemot servern på någon nivå alls.
+
+# Fråga 5
+*Vad har du lärt dig av denna uppgift?*
+
+Jag har lärt mig att använda cURL och DomDocument för att komma åt och välja ut specifik data från ett html-dokument. Jag har även lärt mig serialisera och deserialisera objekt i PHP, vilket var enklare än väntat.
