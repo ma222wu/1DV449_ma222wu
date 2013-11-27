@@ -1,0 +1,41 @@
+# Diskussionsfråga 1 - Webbens framtid
+*Hur tror du att vi kommer använda webben om fem till tio år? Både till vardags och som samhällsmedborgare?*
+Jag tror att vårt sätt att använda webben kommer förbli densamma, men vi kommer använda den till mer. Applikationer såsom word processors fungerar utmärkt i webbläsaren och det enda de behöver för större genomslag är tid.
+
+*Vilka typer av tjänster tror Du vi skulle kunna tänkas se i en framtida webb?*
+Mer komplicerade applikationer, såsom polygonala spel kommer bli allt vanligare, eftersom datorerna kommer bli tillräcklig kraftfulla för att rendera spelen i tillräckligt bra kvalitet utan att de är programmerade i assembly. Tills slut är det fullt möjligt att alla datorapplikationer kommer kunna köras i en webbläsare, men det kommer alltid finnas ett behov för applikationer som inte kräver att man är ansluten till internet. En svårare fråga är vilka typer av tjänster som kommer kunna ligga helt i molnet; en webbläsare som bara fungerar som launcher för webbapplikationer som redan är lagrade på en dators sekundära minne känns överflödig.
+
+*Hur tror du din roll som webbutvecklare kommer förändras?*
+Då jag inte är mycket till webbutvecklare än är detta svårt att svara på. I den hypotetiska framtid där applikationer existerar och exekverar i molnet tror jag att det kommer bli mycket viktigare att kunna skriva väloptimerade applikationer som använder bandbredd och klockcykler effektivt och avlastar så mycket som möjligt hos klienten.
+
+## 1.2 Fallstudie
+*Vad tror du om konceptet 100% webb, både i dagsläget och i framtiden?*
+100% är lite att ta i, men mycket av det som görs lokalt hos klienten idag skulle kunna göras i molnet, något som tagits upp i ovanstående punkter. En framtid med 100% webb är emellertid problematisk för klienter utan eller med dålig internettillgång, till exempel i utveckligsländer. Jag tror det alltid kommer finnas ett behov av applikationer som inte kräver tillgång till internet.
+
+*Hur skulle du klara dig idag om du bara använde dig av en webbläsare som programplattform. Vilka tjänster/mjukvaror kan du inte köra i en webbläsare?*
+För mig personligen känns 100% webb som orealistiskt då jag använder min dator huvudsakligen till att spela spel. Även om det tekniskt sett skulle kunna gå att spela alla typer av spel i en webbläsare så kommer man alltid få bättre prestanda av x86-assembly och C++ än JavaScript. Mindre grafiskt intensiva spel och övriga applikationer skulle dock mycket väl kunna köras i en webbläsare, men jag har svårt att se varför detta skulle vara nödvändigt.
+
+# Diskussionsfråga 2 - Öppen data
+*Vad innebär egentligen begreppet "öppen data"?*
+Öppen data är idén om data som är fritt tillgänglig för alla och inte är upphovsrättbelagd eller kontrollerad på något annat sätt.
+
+*Vad finns det för krav på den data som kallas för öppen data?*
+Enligt "Open Defition" är öppen data såsan som vem som helst får använda, återanvända och distribuera. De enda möjliga kraven kan vara att datan förblir oförändrad och/eller att upphovsmannen krediteras.
+
+*Vad tror du tendenserna med mer öppen data kommer spela för roll för dig som webbutvecklare?*
+Jobbet som webbutvecklare blir allt lättare ju mer öppen källkod och övrig data man har att studera och kopiera. En programmerares värde är emellertid direkt proportionell mot hur mycket kod han behöver skriva. I en utopisk framtid där det finns öppna, fria applikationer för alla ändamål finns det inget större behov av utvecklare.
+
+## 2.1 Fallstudie
+
+*Surfa runt på din kommuns webbplats för att orientera dig kring vilken information som finns där. Vilken skulle du vara intresserad av att få presenterad på ett mer strukturerat sätt (för enklare användning i dina applikationer t.ex. som webb-API).* 
+Det finns mycket som skulle kunna striktureras upp i API:er på kalmar.se, men saker såsom boendeområden och information om kollektivtrafik känns spontant som något man skulle kunda skriva applikationer om ifall det hade funnits API:er.
+
+*Kan du komma på några tjänster som man skulle kunna bygga med denna data som skulle komma kommun/kommuninvånare till gagn?* 
+Som nämnts ovan, kollektivtrafik och bostäder känns som viktiga ämnen man som nuvarande eller blivande invåndare; denna information finns dock redan presenterad på siten. Något som inte verkar finnas är en utförlig lista med kontaktinformation för personer man som nyfiken invånare skulle kunna tänkas vilja kontakta.
+
+*Tror du det finns någon information som i dagsläget inte är tillgänglig som Du skulle vilja komma åt för att bygga bra tjänster/applikationer?*
+Jag slås inte av något jag saknar på kalmar.se.
+
+*Vad för möjligheter- respektive risker ser du ur kommunens synvinkel att öppna upp sin data? Vad för möjligheter- respektive risker ser du som medborgare?*
+
+Ett särskilt digert scenario skulle vara om kommunen publicerar information som kan användas i brottssyften. Om en utomstående till exempel skulle ha information om antal poliser anställda och hur kommunens befolkning är bosatt skulle denne kunna till exempel kunna komma fram till vilka bostäder man skulle bryta sig in i där polisens svarstid blir som längst. Man bör även tänka på att hålla informationen uppdaterad och se till att den inte är överflödig. Det blir även svårare att presentera och hjälpa användare hitta information ju mer av den det finns.
