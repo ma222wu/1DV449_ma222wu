@@ -32,7 +32,7 @@ function getMessage($nr) {
 	 	return false;
 }
 
-function getAllMessages() {
+function getAllMessages($pid) {
 	$db = null;
 
 	try {
@@ -43,7 +43,7 @@ function getAllMessages() {
 		die("Del -> " .$e->getMessage());
 	}
 	
-	$q = "SELECT * FROM messages";
+	$q = "SELECT * FROM messages WHERE pid = $pid";
 	
 	$result;
 	$stm;	

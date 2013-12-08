@@ -13,8 +13,9 @@ if(isset($_GET['function'])) {
 		logout();
     } elseif($_GET['function'] == 'add') {
        
-	    $name = $_GET["name"];
+	    $name = $_SESSION['user'];
 		$message = $_GET["message"];
+		$message = strip_tags($message);
 		$pid = $_GET["pid"];
 		
 		addToDB($name, $message, $pid);
@@ -33,6 +34,7 @@ if(isset($_GET['function'])) {
    	   	echo(json_encode(getMessage($serial)));
     }  
 	    elseif($_GET['function'] == 'getAllMessages') {
-   	   	echo(json_encode(getAllMessages()));
+	    $pid = $_GET["pid"];
+   	   	echo(json_encode(getAllMessages($pid)));
     }  
 }

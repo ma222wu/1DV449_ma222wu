@@ -45,6 +45,8 @@ function isUser($u, $p) {
 	catch(PDOEception $e) {
 		die("Del -> " .$e->getMessage());
 	}
+	
+	$p = hash("sha512", $p);
 	$q = "SELECT id FROM users WHERE username = '$u' AND password = '$p'";
 
 	$result;

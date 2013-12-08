@@ -16,7 +16,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'><!--///////PRESTANDA LAGRA FONTEN LOKALT ISTÄLLET-->
     <link rel="stylesheet" href="css/screen.css" media="screen"/>
     <link rel="stylesheet" href="css/lightbox.css" media="screen"/>
-	<script type="text/javascript" src="js/jquery.js"></script>
+    
+	
 	<!--<script type="text/javascript" src="js/longpoll.js"></script>//////////////PRESTANDA FIL SOM 404:AR-->
 	
 	<style type="text/css">
@@ -28,43 +29,9 @@
 	}
 	</style>
 	
-	<script src="js/lightbox.js"></script>
-    
 	<title>Messy Labbage</title>
 
-	<script>
-		$( document ).ready( 
-			function() {
-				$("#logout").bind( "click", function() {
-  				  	window.location = "index.php";
-			 	});
-			}
-		)
-		
-		$( document ).ready( 
-					
-			function() {
-				
-				$('#mess_container').hide();
-				
-				$("#add_btn").bind( "click", function() {
-  				  	
-					var name_val = $('#name_txt').val();
-					var message_val = $('#message_ta').val();
-					var pid =  $('#mess_inputs').val();
-					// make ajax call to logout
-					$.ajax({
-						type: "GET",
-					  	url: "functions.php",
-					  	data: {function: "add", name: name_val, message: message_val, pid: pid}
-					}).done(function(data) {
-					  changeProducer(data);
-					});
-				  
-			  });
-			}
-		)
-	</script>
+	
 
 
 	<!-- Bootstrap core CSS -->
@@ -149,12 +116,10 @@
 				
 				
 				
-				$.ajax({type: "GET",url: "functions.php",data: {function : "getAllMessages"},timeout: 2000
+				$.ajax({type: "GET",url: "functions.php",data: {function : "getAllMessages", pid: pid},timeout: 2000
 						}).done(function(data) {
-							alert(data);
 							var j = JSON.parse(data);
 						//	console.log(j);
-						alert(j[0].message);
 						
 						for(var i = j.length-1; i > -1; i--)
 						{
@@ -211,7 +176,8 @@
 			<div class="col-md-6">
 			<?php
 			/* Produces all the links to the producers */
-				//require_once("get.php");
+				require_once("get.php");
+				
 				$ps = getProducers();
 				
 				foreach($ps as $p) {
@@ -242,7 +208,7 @@
 	        		<div class="col-md-6">
 				<p>Skriv ditt meddelande så dyker det upp i listan</p>
 				<input id="mess_inputs" type="hidden" value="" />
-				Namn: <br /><input id="name_txt" type="text" name="name" value="<?php echo $_SESSION['user']; ?>" /><br /> <!--////////SÄKERHET HÄR KAN MAN SKRIVA VILKET NAMN MAN VILL-->
+				<!--Namn: <br /><p id="name_txt" type="text" name="name" value="<?php echo $_SESSION['user']; ?>" /><br /> --><!--////////SÄKERHET HÄR KAN MAN SKRIVA VILKET NAMN MAN VILL-->
 				Meddelande: <br /><textarea id="message_ta" cols="50" rows="5" name="message"></textarea><br /><br /><!--///////SÄKERHET STRIP TAGS-->
 				<button id="add_btn" class="btn btn-primary"> Skicka ditt meddelande</button>
 				</div>
@@ -256,7 +222,44 @@
 	  	</div><!-- mess_container -->
 
 	    </div> <!-- /container -->
-		<script type="text/javascript" src="js/modernizr.custom.js"></script>
+	    <script type="text/javascript" src="js/jquery.js"></script>
+	<!--<script src="js/lightbox.js"></script>-->
+	
+	<script>
+		$( document ).ready( 
+			function() {
+				$("#logout").bind( "click", function() {
+  				  	window.location = "index.php";
+			 	});
+			}
+		)
+		
+		$( document ).ready( 
+					
+			function() {
+				
+				$('#mess_container').hide();
+				
+				$("#add_btn").bind( "click", function() {
+  				  	
+					var name_val = $('#name_txt').val();
+					var message_val = $('#message_ta').val();
+					var pid =  $('#mess_inputs').val();
+					// make ajax call to logout
+					$.ajax({
+						type: "GET",
+					  	url: "functions.php",
+					  	data: {function: "add", name: name_val, message: message_val, pid: pid}
+					}).done(function(data) {
+					  changeProducer(data);
+					});
+				  
+			  });
+			}
+		)
+	</script>
+    
+		<!--<script type="text/javascript" src="js/modernizr.custom.js"></script>-->
 		<!--<script type="text/javascript" src="js/ajax_minified.js"></script>//////////////PRESTANDA FIL SOM 404:AR-->
 		<style type="text/css">
 			#mess_p_mess {

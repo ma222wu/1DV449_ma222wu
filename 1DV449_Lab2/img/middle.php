@@ -1,1 +1,1 @@
-<?php sleep(2); header("Location: ../mess.php");
+<?php  header("Location: ../mess.php");
