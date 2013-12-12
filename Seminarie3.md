@@ -1,7 +1,7 @@
 # Mashup-applikation
 ##Projektidé
 
-Min idé är en applikation som kombinerar giantbomb.coms databas med utvecklare och företag och individuella utvecklare med gamesradar.coms databas med spelrecensioner. Denna data skall sedan användas för att kartlägga kvaliteten på de spel som de olika utvecklarna och företagen varit delaktiga i.
+Min idé är en applikation som kombinerar giantbomb.coms databas med utvecklare och företag och individuella utvecklare med gamesradar.coms databas med spelrecensioner. Denna data skall sedan användas för att kartlägga kvaliteten på de spel som de olika utvecklarna och företagen varit delaktiga i. Informationen skall redovisas i form av till exemepel grafer och genomsnittssiffror. Man skulle även kunna ta yttelrigare steg och gruppa ihop utvecklare tillsammans för att se hur de arbetar tillsammans, hur de arbetar på ett visst företag, hur olika företag (till exempel utvecklingsstudio/utgivare) fungerar tillsammans.
 
 *Läs igenom dokumentationen till de API:er du använder. Vad är dina tankar om den?*
 
